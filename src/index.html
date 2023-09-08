@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			@@include('html/home/_home.htm', {})
+			@@include('html/order/_order.htm', {})
+			@@include('html/services/_services.htm', {})
+			@@include('html/about-us/_about-us.htm', {})
+			@@include('html/works/_works.htm', {})
+			@@include('html/models/_models.htm', {})
+			@@include('html/contacts/_contacts.htm', {})
+			@@include('html/maps/_maps.htm', {})
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

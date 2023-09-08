@@ -1,0 +1,42 @@
+.models {
+}
+
+.item-models {
+	display: flex;
+	align-items: center;
+	border: 1px solid $redColor;
+	border-radius: 20px;
+
+	&__head {
+	}
+
+	&__content {
+		padding: 10px 10px 10px 0px;
+	}
+	&__name {
+		@include adaptiveValue('font-size', 24, 10);
+		line-height: math.div(33, 24);
+		text-transform: uppercase;
+		color: $redColor;
+		margin: 0px 0px em(10, 24) 0px;
+	}
+
+	&__year {
+		@include adaptiveValue('font-size', 18, 10);
+		line-height: math.div(25, 18);
+	}
+	&__image {
+		position: relative;
+		@include adaptiveValue('width', 130, 60);
+		@include adaptiveValue('height', 70, 54);
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+		}
+	}
+}

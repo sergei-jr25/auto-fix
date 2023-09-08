@@ -1,0 +1,77 @@
+.order {
+	@include adaptiveValue('padding-top', 100, 60);
+	&__container {
+		position: relative;
+		border: 1px solid $redColor;
+
+		border-radius: 8px;
+
+		box-shadow: 0px 0px 20px 1px #00000012;
+
+		background: linear-gradient(90deg, #1a1a1a 20%, rgba(0, 0, 0, 0) 97.32%),
+			url('../img/form/bg.jpg') no-repeat right;
+		background-size: cover;
+		@media (min-width: $tablet) {
+			background: linear-gradient(90deg, #1a1a1a 62%, rgba(0, 0, 0, 0) 67.32%),
+				url('../img/form/bg.jpg') no-repeat right;
+			background-size: cover;
+
+			padding: rem(40);
+		}
+
+		@media (max-width: $tablet) {
+			padding: 15px;
+		}
+	}
+
+	&__wrapper {
+	}
+
+	&__title {
+		@include adaptiveValue('font-size', 32, 16);
+		font-weight: 600;
+		line-height: math.div(44, 32);
+		margin: 0px 0px em(40, 32) 0px;
+		span {
+			color: #ffb72b;
+		}
+		@media (max-width: $tablet) {
+			text-align: center;
+		}
+	}
+	&__items {
+		display: grid;
+		@include adaptiveValue('gap', 20, 10);
+		margin: 0px 0px rem(20) 0px;
+		@media (min-width: $tablet) {
+			display: flex;
+			align-items: center;
+			gap: rem(20);
+		}
+	}
+
+	&__copy {
+		@include adaptiveValue('font-size', 16, 12);
+		font-weight: 600;
+		line-height: math.div(22, 16);
+		@media (max-width: $tablet) {
+			font-weight: 500;
+			text-align: center;
+		}
+	}
+	&__button {
+	}
+
+	&__bg {
+		position: absolute;
+		width: auto;
+		height: 100%;
+		top: 0;
+		right: 0;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

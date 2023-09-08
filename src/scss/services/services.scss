@@ -1,0 +1,81 @@
+$block-count: 8;
+$delay: 0.5s;
+
+.services {
+	@include adaptiveValue('padding-top', 100, 60);
+	&__container {
+	}
+
+	&__head {
+		@media (min-width: $tablet) {
+			opacity: 0;
+			transform: translate(0, -40px);
+			transition: opacity 0.3s ease 0s, transform 0.3s ease;
+			._active & {
+				opacity: 1;
+				transform: translate(0, 0px);
+			}
+		}
+	}
+
+	&__title {
+	}
+
+	&__subtitle {
+	}
+
+	&__items {
+		display: grid;
+		// grid-template-columns: repeat(auto-fit, minmax(rem(145), rem(335)));
+		@include adaptiveValue('column-gap', 20, 10);
+		@include adaptiveValue('row-gap', 50, 10);
+		@include adaptiveValue('margin-bottom', 20, 10);
+		grid-template-columns: repeat(4, 1fr);
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__item {
+	}
+
+	&__image {
+		position: relative;
+		padding: 0px 0px percent(250, 335) 0px;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+
+	&__text {
+		@include adaptiveValue('font-size', 24, 12);
+		line-height: math.div(36, 24);
+		font-weight: 600;
+	}
+}
+@media (min-width: $mobile) {
+	@for $i from 1 through 8 {
+		.services__item:nth-child(n + #{$i}) {
+			border-radius: 5px;
+			position: relative;
+			overflow: hidden;
+			left: -$i * 100%;
+			transition: left #{0.1 * $i + 0.1}s linear;
+
+			&:nth-child(#{$i}) {
+				._active & {
+					left: 0;
+				}
+			}
+		}
+	}
+}

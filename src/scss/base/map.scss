@@ -1,0 +1,72 @@
+[class*='copyrights-promo'] {
+	display: none !important;
+}
+[class*='copyrights-wrap'] {
+	display: none !important;
+}
+[class*='ground-pane'] {
+	filter: grayscale(1);
+	transition: filter 0.3s ease 0s;
+}
+[class*='inner-panes'] {
+	@media (any-hover: hover) {
+		&:hover {
+			[class*='ground-pane'] {
+				filter: grayscale(0);
+			}
+			.my-marker {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
+
+[class*='-image'] {
+	filter: none;
+}
+[class*='-placemark-overlay .-user-selection'] {
+	display: none;
+}
+.ymaps-2-1-79 {
+}
+
+.custom-marker {
+	position: relative;
+}
+
+.router-text {
+	position: absolute;
+	z-index: 1600;
+
+	top: 65%;
+	left: 46%;
+}
+
+.my-marker {
+	position: absolute;
+	z-index: 2000;
+	top: 85px;
+	text-align: center;
+	background: linear-gradient(180deg, #ff0000 0%, #c70000 100%);
+	padding: 12px 20px;
+	border-radius: 8px;
+	font-size: rem(12);
+	line-height: math.div(14, 12);
+	color: #fff;
+	width: rem(172);
+	opacity: 0;
+	visibility: hidden;
+}
+.myButton {
+	text-align: center;
+	background: linear-gradient(180deg, #ff0000 0%, #c70000 100%);
+	padding: 12px 20px;
+	border-radius: 8px;
+	font-size: rem(12);
+	line-height: math.div(14, 12);
+	color: #fff;
+	width: rem(172);
+	// opacity: 0;
+	// visibility: hidden;
+}

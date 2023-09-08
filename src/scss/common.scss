@@ -1,0 +1,128 @@
+// Заголовки, общие БЄМ блоки и проче...
+.head {
+	@include adaptiveValue('margin-bottom', 75, 40);
+
+	@media (min-width: $tablet) {
+		opacity: 0;
+		transform: translate(0, -40px);
+		transition: opacity 0.3s ease 0s, transform 0.3s ease;
+		._active & {
+			opacity: 1;
+			transform: translate(0, 0px);
+		}
+	}
+}
+.title {
+	font-weight: 800;
+	color: $mainColor;
+	@include adaptiveValue('font-size', 52, 21);
+	line-height: math.div(63.39, 52);
+	&:not(:last-child) {
+		margin: 0px 0px em(20, 52) 0px;
+	}
+	&_big {
+		&:not(:last-child) {
+			margin: 0px 0px em(75, 52) 0px;
+		}
+	}
+}
+
+.subtitle {
+	font-size: rem(24);
+	line-height: math.div(30, 24);
+	font-weight: 600;
+	color: $mainColor;
+}
+
+.button {
+	padding: rem(20) rem(67);
+	text-align: center;
+	@include adaptiveValue('font-size', 18, 15);
+	line-height: math.div(21, 18);
+	font-weight: 600;
+	color: $mainColor;
+	background: linear-gradient(180deg, #ff0000 0%, #c70000 100%);
+	border-radius: 8px;
+	text-transform: uppercase;
+	animation: gradientChange 3s infinite;
+	@media (max-width: $mobile) {
+		width: 100%;
+		padding: rem(15) rem(62);
+	}
+
+	&_order {
+		padding: 20px 81px 20px 81px;
+		@media (min-width: $mobile) {
+			justify-self: start;
+		}
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: linear-gradient(180deg, #c50101 0%, #720000 100%);
+		}
+	}
+}
+
+.text {
+	@include adaptiveValue('font-size', 21, 12);
+	line-height: math.div(29.4, 21);
+	font-weight: 500;
+}
+
+.padding-top {
+	@include adaptiveValue('padding-top', 100, 60);
+}
+.swiper-margin {
+	@include adaptiveValue('margin-bottom', 50, 25);
+}
+
+.control {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+	justify-content: center;
+
+	@media (min-width: $mobile) {
+		opacity: 0;
+		transition: opacity 0.3s ease 0s;
+		._active & {
+			opacity: 1;
+		}
+	}
+}
+.arrow {
+	padding: 0px 0px 5px 0px;
+	cursor: pointer;
+	img {
+		@include adaptiveValue('width', 50, 30);
+		@include adaptiveValue('height', 50, 30);
+		transition: transform 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1.111);
+			}
+		}
+	}
+}
+
+.copy {
+	@include adaptiveValue('font-size', 16, 12);
+	font-weight: 600;
+	line-height: math.div(22, 16);
+	@media (max-width: $tablet) {
+		font-weight: 500;
+		text-align: center;
+	}
+}
+
+.slider {
+	@media (min-width: $mobile) {
+		transform: translateX(-300%);
+
+		transition: transform 0.3s ease 0s;
+		._active & {
+			transform: translateX(0);
+		}
+	}
+}

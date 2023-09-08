@@ -1,0 +1,21 @@
+.maps {
+	&__container {
+	}
+
+	&__wrapper {
+		max-width: rem(1600);
+		width: 100%;
+		margin: 0px auto;
+
+		@include adaptiveValue('height', 550, 380);
+
+		@media (min-width: $mobile) {
+			transform: translateX(-300%);
+			transition: transform 0.3s ease 0s;
+
+			._active & {
+				transform: translateX(0);
+			}
+		}
+	}
+}

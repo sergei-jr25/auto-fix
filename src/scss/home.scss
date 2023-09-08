@@ -1,0 +1,172 @@
+.home-page {
+	@include adaptiveValue('padding-top', 166, 80);
+	padding: 0px 0px rem(56) 0px;
+	// width: 100vw;
+	// height: 100vh;
+
+	&__container {
+		position: relative;
+	}
+	&__title {
+		@media (min-width: $mobile) {
+			position: relative;
+			left: -200%;
+			transition: left 0.5s ease 0s;
+
+			._active & {
+				left: 0;
+			}
+		}
+	}
+
+	&__subtitle {
+		font-weight: 600;
+
+		@include adaptiveValue('font-size', 36, 15);
+		line-height: math.div(43.88, 36);
+		margin: 0px 0px em(50, 36) 0px;
+	}
+
+	&__wrapper {
+		display: grid;
+
+		@include adaptiveValue('gap', 68, 30);
+
+		@media (min-width: $tablet) {
+			grid-template-columns: rem(320) 1fr;
+		}
+	}
+
+	&__image {
+		position: relative;
+	}
+	&__picture {
+		margin: 0px -15px 0px 0px;
+		background: url('../img/home/backgoud.png') no-repeat right -15px;
+		background-size: contain;
+		padding: 0px 15px 0px 0px;
+		@include adaptiveValue('padding-top', 30, 8);
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			text-align: left;
+		}
+		@media (max-width: $tablet) {
+			order: 2;
+		}
+	}
+
+	&__name {
+		position: absolute;
+
+		top: 0;
+
+		left: 75px;
+		@include adaptiveValue('font-size', 100, 30);
+		font-weight: 800;
+		line-height: math.div(96.4, 100);
+	}
+	&__content {
+		@media (max-width: $tablet) {
+			order: 1;
+		}
+		@media (min-width: $mobile) {
+			position: relative;
+			left: -200%;
+			transition: left 0.5s ease 0s;
+
+			._active & {
+				left: 0;
+			}
+		}
+	}
+
+	&__image {
+		@media (min-width: $mobile) {
+			position: relative;
+			right: -200%;
+			transition: left 0.5s ease 0s;
+
+			._active & {
+				right: 0;
+			}
+		}
+	}
+
+	&__button {
+		@include adaptiveValue('margin-bottom', 75, 25);
+	}
+
+	&__items {
+		display: grid;
+		gap: rem(20);
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+
+	&__media {
+		position: relative;
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0px;
+			left: 30px;
+			width: 100%;
+			height: 1px;
+			background-color: #ffb72b;
+		}
+		&::after {
+			top: inherit;
+			bottom: 0;
+		}
+		img {
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	}
+
+	&__value {
+		height: rem(60);
+		position: relative;
+		width: 100%;
+		display: block;
+		border: 1px solid #ffb72b;
+
+		padding: 10px 20px;
+		border-left: none;
+
+		border-radius: 8px;
+		font-weight: 600;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	&__scroll {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		font-size: 21px;
+		font-weight: 500;
+		line-height: math.div(29.4, 21);
+
+		@media (min-width: $tablet) {
+			// position: absolute;
+			left: 15px;
+			gap: rem(20);
+		}
+		@media (max-width: $tablet) {
+			text-align: center;
+
+			margin: rem(35) 0px 0px 0px;
+		}
+		@media (max-width: $mobile) {
+			justify-content: center;
+			margin: rem(28) 0px 0px 0px;
+		}
+	}
+}
